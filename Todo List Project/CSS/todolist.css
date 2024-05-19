@@ -5,7 +5,11 @@ body {
 #main-heading {
   text-align: center;
 }
-
+.container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .grid-container {
   display: grid;
   grid-template-columns: 200px 150px 100px;
