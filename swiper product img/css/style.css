@@ -1,0 +1,40 @@
+.img_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.myswiper2 {
+  width: 300px;
+  height: 300px;
+}
+
+.myswiper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+  width: 300px;
+}
+
+.myswiper .swiper-slide {
+  width: 70px;
+  height: 70px;
+  opacity: 0.4;
+}
+
+.myswiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.myswiper2 .swiper-slide img {
+  width: 100%;
+  height: auto;
+}
+
+.myswiper .swiper-slide img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
