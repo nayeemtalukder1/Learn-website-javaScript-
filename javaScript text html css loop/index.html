@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="name"></div>
+
+  <script>
+    let name = document.querySelector('.name');
+    //name.innerText = `Text 1`;
+    //name.innerHTML = `<p>nayeem</p>`;
+    name.style.color = 'blue';
+    let innerHtml = '';
+    for(let i = 0; i<500; i++) {
+      innerHtml+=`<p>I love you ${i}</p>`;
+      
+    }
+    name.innerHTML = innerHtml;
+  </script>
+</body>
+</html>

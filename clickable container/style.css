@@ -1,0 +1,41 @@
+.container {
+  width: 100px;
+  margin: auto;
+
+}
+
+.tab-titles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tab-links {
+  margin-right: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.tab-links::after {
+  content: '';
+  height: 3px;
+  width: 0;
+  background-color: brown;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+  width: 50%;
+}
+
+.tab-containes {
+  width: 291px;
+  display: none;
+}
+
+.tab-containes.active-containe {
+  display: block;
+}

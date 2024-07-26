@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Container</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="tab-titles">
+      <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+      <p class="tab-links" onclick="opentab('exparience')">Experience</p>
+      <p class="tab-links" onclick="opentab('eductaions')">Education</p>
+    </div>
+
+    <div class="tab-containes active-containe" id="skills">
+      <ul>
+        <li>
+          <span>Web DEVELOPER</span><br />Work with HTML,CSS,JAVASCRIPT
+        </li>
+        <li>
+          <span>Programming</span><br />Basic knowledge of C, C++,
+          Python
+        </li>
+        <li>
+          <span>Data Analist</span><br />Work with EXCEL, SPSS, STATA
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-containes" id="exparience">
+      <ul>
+        <li>
+          <span>Data Analisis</span><br />I work in different Excel
+          project, SPSS project.
+        </li>
+        <li>
+          <span>Web Development</span><br />I work with
+          HTML,CSS,JAVASCRIPT,REACT.
+        </li>
+        <li>
+          <span>Programming Language</span><br />Basic knowledge of C,
+          C++, Python, JavaScript
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-containes" id="eductaions">
+      <ul>
+        <li><span>SSC</span><br />Tarakanda ML High School</li>
+        <li><span>HSC</span><br />Agriculture University Collage</li>
+        <li>
+          <span>Honors</span><br />Jatiya kabi kazi nazrul islam
+          university
+        </li>
+      </ul>
+    </div>
+
+
+  </div>
+  <script>
+    let tablinks = document.getElementsByClassName("tab-links");
+    let tabcontaines = document.getElementsByClassName("tab-containes");
+
+    function opentab(tabname) {
+      for(tablink of tablinks){
+        tablink.classList.remove("active-link");
+      }
+
+      for(tabcontaine of tabcontaines){
+        tabcontaine.classList.remove("active-containe");
+      }
+
+      console.log(event);
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-containe");
+    }
+  </script>
+</body>
+</html>

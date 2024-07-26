@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container .element:nth-child(2) ~ .element {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="element">1</div>
+    <div class="element">2</div>
+    <div class="element">3</div>
+    <div class="element">4</div>
+    <div class="element">5</div>
+    <div class="element">6</div>
+    <div class="element">7</div>
+    <div class="element">8</div>
+    <div class="element">9</div>
+    <div class="element">10</div>
+  </div>
+  <button class="btn">See more</button>
+
+
+  <script>
+    let seemore = document.querySelector(".btn");
+
+    let currentItem = 2;
+
+    seemore.addEventListener("click",
+      () => {
+        const elementList = [...document.querySelectorAll(".container .element")];
+
+        for(let i = currentItem; i < currentItem + 2; i++){
+          elementList[i].style.display = "block";
+        }
+        currentItem += 2;
+        if(currentItem>=elementList.length) {
+          seemore.style.display = "none";
+        }
+      }
+    )
+  </script>
+</body>
+</html>

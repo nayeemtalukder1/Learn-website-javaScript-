@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stroge</title>
+</head>
+<body>
+  <script>
+    let score = {
+      win : 0,
+      loss : 0,
+      tie : 0,
+    }
+
+    localStorage.setItem('score', JSON.stringify(score));
+    //localStorage.clear();
+
+    let json = localStorage.getItem('score');
+    console.log(json);
+    let obj = JSON.parse(json);
+    console.log(obj);
+  </script>
+</body>
+</html>
