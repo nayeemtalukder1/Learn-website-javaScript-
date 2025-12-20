@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic JavaScript</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Welcome to Basic JavaScript</h1>
+  <p>This page demonstrates a simple alert functionality using JavaScript.</p>
+
+  <button onclick="showEvent(event)" class="btn btn-red">Click me</button>
+  <script>
+    ///// variable
+    let a = 10;
+    console.log(a);
+    var b = 11;
+    b = 12;
+    console.log(b);
+    const c = 13;
+    //c = 14;
+    console.log(c);
+
+    /////variable types
+        let x = 10;
+        let y = "Nayeem";
+        let z = true;
+        let arr = ["html", "css","js"];
+        let ob = {
+            name: "Nayeem",
+            age: 24,
+            city: "Dhaka"
+        }
+
+        let users = [
+            { id: 1, name: "A", age: 20 },
+            { id: 2, name: "B", age: 22 }
+        ];
+
+        console.log(users[1].name); // B 
+        
+        users.map(user => user.name);
+        users.filter(user => user.age > 20);
+        users.find(user => user.id === 1);
+
+        console.log(x);
+        console.log(y);
+        console.log(z);
+        console.log(arr);
+        console.log(arr[1]);
+        console.log(ob);
+        console.log(ob.name);
+        console.log(ob["age"]);
+
+        //// 
+        //condition
+        if(x > 5){
+            console.log("x is greater than 5");
+        } else {
+            console.log("x is less than or equal to 5");
+        }
+        //loop
+        for(let i = 0; i < arr.length; i++){
+            console.log(arr[i]);
+        }
+
+
+        let fruits = ["Apple", "Orange", "Grapes"];
+
+        let k = 0;
+        while (k < fruits.length) {
+        console.log(fruits[k]);
+            k++;
+        }
+
+        let l = 0;
+        do {
+          console.log(fruits[l]);
+          l++;
+        } while (l < fruits.length);
+
+
+        for (let m = 0; m < fruits.length; m++) {
+            console.log(fruits[m]);
+        }
+
+
+        for (let fruit of fruits) {
+          console.log(fruit);
+        }
+
+
+        for (let index in fruits) {
+          console.log(index, fruits[index]);
+        }
+
+
+        fruits.forEach(function(fruit) {
+          console.log(fruit);
+        });
+
+
+        let upperFruits = fruits.map(fruit => fruit.toUpperCase());
+        console.log(upperFruits);
+
+        //iterator
+        let iterator = fruits[Symbol.iterator]();
+
+        console.log(iterator.next()); // Apple
+        console.log(iterator.next()); // Orange
+        console.log(iterator.next()); // Grapes
+
+        //spread operator
+        let arr1 = [1, 2, 3];
+        let arr2 = [4, 5, 6];
+        let combined = [...arr1, ...arr2];
+        console.log(combined); // [1, 2, 3, 4, 5, 6]
+        //rest operator
+        function sumAll(...numbers) {
+            return numbers.reduce((acc, curr) => acc + curr, 0);
+        }   
+        console.log(sumAll(1, 2, 3, 4)); // 10
+
+        //destructuring
+        let person = { name: "Nayeem", age: 23, city: "Dhaka" };
+        let { name, age, city } = person;
+        console.log(name); // Nayeem
+        console.log(age);  // 23    
+        console.log(city); // Dhaka
+
+        let {nam,...rest} = person;
+        console.log(rest); // {age: 23, city: "Dhaka"}
+
+
+
+        //json
+        let user = { name: "Nayeem", age: 23 };
+        let jsonData = JSON.stringify(user);
+
+        console.log(jsonData);
+        // {"name":"Nayeem","age":23}
+
+        let data = '{"name":"Nayeem","age":23}';
+        let obj = JSON.parse(data);
+
+        console.log(obj.name); // Nayeem
+
+
+        // function
+
+function sum(a,b){
+    return a + b;
+}
+
+sum(5,10);
+console.log(sum(5,10)); // 15
+
+//arrow function
+let munish = (a,b) => a-b;
+console.log(munish(10,20)); // 30
+
+// async function
+async function hello(){
+    return "Hello Async";
+}
+
+hello().then(res => console.log(res));
+
+
+/// event object onclick
+function showEvent(event) {
+  event.currentTarget.style.backgroundColor = "yellow";
+  event.currentTarget.classList.add("btn-blue");
+  console.log(event.currentTarget.classList);
+  console.log(event);
+  console.log(event.type);   // click
+  console.log(event.target); // button
+}
+
+//// error handling
+// try {
+//     console.log(nonExistentVariable);
+// } catch (error) {
+//     console.error("An error occurred: " + error.message);
+// } finally {
+//     console.log("Execution completed.");
+// }   
+
+///strict mode
+'use strict';
+g = 30;
+console.log(g); // ReferenceError: g is not defined
+
+</script>
+</body>
+</html>
